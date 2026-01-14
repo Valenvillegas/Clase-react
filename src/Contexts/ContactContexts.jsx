@@ -43,21 +43,27 @@ export default function ContactContextsProvider(){
         }
     }
 
-    function updateContactById(
-        updeted_contact, //un objeto simil a un contacto con algunas modificaciones (ejemplo, el nombre)
-        contact_id_to_update //UN numero que represente el id del contacto a actualizar
-    ){
-        const contactsUpdated = contacts.map(
-            (contact)=>{
-                if(contact.contact_id === contact_id_to_update){
-                    return updeted_contact
-                }else{
-                    return contact
-                }
+    function updateContactById (
+        update_contact_object,
+        contact_id_to_update
+    )
+    {
+        setContacts(
+            (currentContactsList) => {
+                const updatedContactsList = currentContactsList.map(
+                    (contact) => {
+                        if (Number(contact.contact_id) === Number(contact_id_to_update)) {
+                            return { ...contact, ...update_contact_object }
+                        } else {
+                            return contact
+                        }
+                    }
+                )
+                return updatedContactsList
             }
         )
-        setContacts(contactsUpdated)
     }
+    console.log("estado global contactos", contacts)
  /* 
     Comunicar la lista de contactos al ConctactList component
     Renderizar la lista de contactos (No hacen falta estilos en esta etapa)

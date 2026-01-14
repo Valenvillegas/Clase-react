@@ -4,6 +4,7 @@ import MessagesList from '../../Components/MessagesList/MessagesList';
 import { getContactById } from '../../services/contactService';
 import { ContactDetailContext } from '../../Contexts/ContactDetailContext';
 import { ContactContexts } from '../../Contexts/ContactContexts';
+import NewMessageForm from '../../Components/NewMessagesForm/NewMessageForm';
 /* contact_id: 1,
         contact_name: 'Laura',
         contact_avatar: 'https://www.seoptimer.com/storage/images/2014/08/no-con-la-mascota.jpg',
@@ -19,9 +20,8 @@ export default function ContactMesaggeScreen() {
     )
     const {updateContactById} = useContext(ContactContexts)
     if (!contactSelected) return <div>El contacto no existe</div>
-    console.log(contactSelected)
      //A los 3 seg de ejecutarse el componente quiero que se modifique el nombre del contacto a ratatuille
-    useEffect(
+    /* useEffect(
         () => {
             setTimeout(
                 () => {
@@ -34,15 +34,18 @@ export default function ContactMesaggeScreen() {
             )
         },
         []
-    )
+    ) */
     return (
         <div>
             <h1>Detalle del contacto</h1>
             <h2>
                 Nombre:{contactSelected.contact_name}
+                
             </h2>
+            
             <div>
                 <MessagesList />
+                <NewMessageForm />
             </div>
         </div>
 

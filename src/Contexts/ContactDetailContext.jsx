@@ -15,13 +15,31 @@ export const ContactDetailContext = createContext(
     }
 );
 export default function ContactDetailContextProvider() {
-    const { getContactById } = useContext(ContactContexts)
+    const { getContactById, updateContactById} = useContext(ContactContexts)
     //Esto nos permite caputrar parametros de busqueda en la URL
     const { contact_id } = useParams()
     const contactSelected = getContactById(contact_id)
+    function addNewMessage(new_message_text) {
+        const new_message =
+        {
+            message_id: contactSelected.messages.length + 1,
+            message_content: new_message_text,
+            message_status: 'UNSEEN',
+            message_created_at: new Date(),
+            send_by_me: true
+        }
+        updateContactById(
+            {
+                messages: [...contactSelected.messages, new_message]
+            },
+            contact_id
+        )
+    }
 
     const value = {    
-        contactSelected: contactSelected }
+        contactSelected: contactSelected,
+        addNewMessage: addNewMessage
+    }
     return (
         <ContactDetailContext.Provider value={value}>
             <Outlet />
