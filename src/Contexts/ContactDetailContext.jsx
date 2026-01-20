@@ -34,6 +34,7 @@ export default function ContactDetailContextProvider() {
             },
             contact_id
         )
+
     }
 
     const value = {    

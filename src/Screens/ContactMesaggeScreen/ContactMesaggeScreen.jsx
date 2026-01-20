@@ -28,7 +28,7 @@ export default function ContactMesaggeScreen() {
                 <img src={contactSelected.contact_avatar || 'https://via.placeholder.com/40'} alt="avatar" />
                 <div className="chat-info">
                     <h3>{contactSelected.contact_name}</h3>
-                    <span>en línea hoy a las 10:00</span>
+                    <span>en línea hoy a las {contactSelected.last_time_online}</span>
                 </div>
             </div>
 

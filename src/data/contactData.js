@@ -6,6 +6,7 @@ const contacts_data = [
         last_message_created_at: new Date(),
         last_message_content: 'Hola que tal',
         last_message_status: 'NOT_RECEIVED', /* 'SEEN' | 'UNSEEN' */
+        last_time_online: '10:00 Am',
         messages: [
             {
                 message_id: 1,
@@ -37,6 +38,7 @@ const contacts_data = [
         last_message_created_at: new Date(),
         last_message_content: 'Saludar tu debes',
         last_message_status: 'SEEN',/* 'SEEN' | 'UNSEEN' */
+        last_time_online: '5:00 Am',
         messages: [
             {
                 message_id: 1,
