@@ -20,21 +20,6 @@ export default function ContactMesaggeScreen() {
     )
     const {updateContactById} = useContext(ContactContexts)
     if (!contactSelected) return <div>El contacto no existe</div>
-     //A los 3 seg de ejecutarse el componente quiero que se modifique el nombre del contacto a ratatuille
-    /* useEffect(
-        () => {
-            setTimeout(
-                () => {
-                    updateContactById(
-                        {...contactSelected, contact_name: 'ratatoulle'},
-                        contactSelected.contact_id
-                    )
-                },
-                3000
-            )
-        },
-        []
-    ) */
     return (
         <div>
             <h1>Detalle del contacto</h1>
