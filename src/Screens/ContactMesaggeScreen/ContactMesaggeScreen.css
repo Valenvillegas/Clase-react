@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.chat-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #efeae2;
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.chat-header {
+    height: 60px;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-left: 1px solid #d1d7db;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.chat-header .chat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #111b21;
+    font-weight: 500;
+}
+
+.chat-header span {
+    font-size: 13px;
+    color: #667781;
+    margin-top: 2px;
+}
+
+.chat-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Assuming MessagesList renders a list of messages. 
+   I can't target internal classes easily without seeing the component, 
+   but I can set some global defaults for this container */
+
+.chat-footer {
+    min-height: 62px;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+/* Style overrides for common elements if they are just divs */
+.chat-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background-color: rgba(11, 20, 26, 0.2);
+}

@@ -1,4 +1,5 @@
 import React, { use, useContext, useEffect } from 'react'
+import './ContactMesaggeScreen.css'
 import { useParams } from 'react-router';
 import MessagesList from '../../Components/MessagesList/MessagesList';
 import { getContactById } from '../../services/contactService';
@@ -18,18 +19,24 @@ export default function ContactMesaggeScreen() {
     const { contactSelected } = useContext(
         ContactDetailContext
     )
-    const {updateContactById} = useContext(ContactContexts)
+    const { updateContactById } = useContext(ContactContexts)
+
     if (!contactSelected) return <div>El contacto no existe</div>
     return (
-        <div>
-            <h1>Detalle del contacto</h1>
-            <h2>
-                Nombre:{contactSelected.contact_name}
-                
-            </h2>
-            
-            <div>
+        <div className="chat-screen">
+            <div className="chat-header">
+                <img src={contactSelected.contact_avatar || 'https://via.placeholder.com/40'} alt="avatar" />
+                <div className="chat-info">
+                    <h3>{contactSelected.contact_name}</h3>
+                    <span>en línea hoy a las 10:00</span>
+                </div>
+            </div>
+
+            <div className="chat-body">
                 <MessagesList />
+            </div>
+
+            <div className="chat-footer">
                 <NewMessageForm />
             </div>
         </div>

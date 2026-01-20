@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.support-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: #3b4a54;
+}
+
+.support-header {
+    height: 60px;
+    background-color: #008069;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.support-header h1 {
+    font-size: 19px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.support-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.support-card {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.support-card h2 {
+    font-size: 24px;
+    color: #111b21;
+    margin-top: 0;
+}
+
+.support-card p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.support-link {
+    color: #027eb5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.support-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.contact-screen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: #111b21;
+}
+
+.contact-screen-header {
+    height: 108px;
+    background-color: #008069;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.contact-screen-header h1 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.contact-list-body {
+    flex: 1;
+    overflow-y: auto;
+    background-color: white;
+    max-width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 900px) {
+    .contact-list-body {
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+        background-color: white;
+        box-shadow: 0 17px 50px 0 rgba(11, 20, 26, .19), 0 12px 15px 0 rgba(11, 20, 26, .24);
+        height: calc(100% - 160px);
+    }
+}
+
+.contact-item-placeholder {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e9edef;
+    cursor: pointer;
+}
+
+.contact-item-placeholder:hover {
+    background-color: #f5f6f6;
+}
+
+.avatar-placeholder {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background-color: #dfe3e5;
+    margin-right: 15px;
+}
+
+.info-placeholder div {
+    background-color: #e9edef;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
