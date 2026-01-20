@@ -1,0 +1,74 @@
+.message-item-container {
+    display: flex;
+    padding: 2px 5%;
+    /* Side padding for the whole area */
+    margin-bottom: 2px;
+}
+
+.message-mine {
+    justify-content: flex-end;
+}
+
+.message-theirs {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    position: relative;
+    max-width: 65%;
+    padding: 6px 7px 8px 9px;
+    border-radius: 7.5px;
+    box-shadow: 0 1px 0.5px rgba(11, 20, 26, .13);
+    font-size: 14.2px;
+    line-height: 19px;
+    color: #111b21;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.bubble-mine {
+    background-color: #d9fdd3;
+    border-top-right-radius: 0;
+}
+
+.bubble-theirs {
+    background-color: #ffffff;
+    border-top-left-radius: 0;
+}
+
+.message-text {
+    margin: 0;
+    margin-right: 7px;
+    /* Space between text and time */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.message-time {
+    font-size: 11px;
+    color: #667781;
+    height: 15px;
+    line-height: 15px;
+    margin-left: auto;
+    /* Push to right if simple flex */
+    margin-bottom: -3px;
+    /* Adjust alignment */
+}
+
+/* Dark Mode */
+.dark-mode .bubble-mine {
+    background-color: #005c4b;
+}
+
+.dark-mode .bubble-theirs {
+    background-color: #202c33;
+}
+
+.dark-mode .message-text {
+    color: #e9edef;
+}
+
+.dark-mode .message-time {
+    color: #8696a0;
+}

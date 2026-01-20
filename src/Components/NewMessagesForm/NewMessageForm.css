@@ -1,0 +1,86 @@
+.new-message-form {
+    background-color: #f0f2f5;
+    padding: 10px 16px;
+    display: flex;
+    align-items: flex-end;
+    /* Align bottom to handle multiline growth logic if added */
+    min-height: 62px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.new-message-input {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 12px 11px;
+    margin: 5px 10px;
+    background-color: #ffffff;
+    font-size: 15px;
+    line-height: 20px;
+    min-height: 20px;
+    max-height: 100px;
+    /* basic constraint */
+    outline: none;
+    resize: none;
+    /* Disable manual resize */
+    font-family: inherit;
+    color: #111b21;
+}
+
+.new-message-input::placeholder {
+    color: #8696a0;
+}
+
+.new-message-btn {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #54656f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    /* Visual alignment with single line input */
+}
+
+.new-message-btn:hover {
+    color: #111b21;
+}
+
+/* Visually Hidden for accessibility label */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Dark Mode */
+.dark-mode .new-message-form {
+    background-color: #202c33;
+}
+
+.dark-mode .new-message-input {
+    background-color: #2a3942;
+    color: #e9edef;
+}
+
+.dark-mode .new-message-input::placeholder {
+    color: #8696a0;
+}
+
+.dark-mode .new-message-btn {
+    color: #8696a0;
+}
+
+.dark-mode .new-message-btn:hover {
+    color: #e9edef;
+}

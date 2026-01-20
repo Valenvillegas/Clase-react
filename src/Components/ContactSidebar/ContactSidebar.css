@@ -1,0 +1,14 @@
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #ffffff;
+    border-right: 1px solid #d1d7db;
+}
+
+/* Dark Mode */
+/* Using :global or assuming parent class if needed, but for now simple */
+.dark-mode .contact-sidebar {
+    background-color: #111b21;
+    border-right: 1px solid #202c33;
+}

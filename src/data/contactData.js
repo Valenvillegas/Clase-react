@@ -38,7 +38,7 @@ const contacts_data = [
         last_message_created_at: new Date(),
         last_message_content: 'Saludar tu debes',
         last_message_status: 'SEEN',/* 'SEEN' | 'UNSEEN' */
-        last_time_online: '5:00 Am',
+        last_time_online: '5:00 Pm',
         messages: [
             {
                 message_id: 1,
@@ -72,4 +72,4 @@ const contacts_data = [
     },
 ]
 
-export default contacts_data
+export default contacts_data
