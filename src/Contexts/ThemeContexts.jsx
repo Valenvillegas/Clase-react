@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const ThemeContext = createContext();
 
 export function ThemeContextProvider({children}){
-    const [isDarkmode, setIsDarkmode] = useState(true)
+    const [isDarkmode, setIsDarkmode] = useState(false)
     return(
         <ThemeContext.Provider value={
             {
