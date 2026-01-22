@@ -27,7 +27,7 @@ export default function ContactMesaggeScreen() {
         <div className="home-screen">
             <div className="home-screen-content">
                 <div className="sidebar-container">
-                    <h1>WhatsApp</h1>
+
                     <ContactSidebar />
                 </div>
                 <div className="chat-screen">

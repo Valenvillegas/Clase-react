@@ -6,6 +6,44 @@
     border-right: 1px solid #d1d7db;
 }
 
+.home-screen-icon-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    background-color: #008069;
+    cursor: default;
+}
+
+.home-screen-icon-menu h1 {
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.home-screen-icon-menu span {
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-screen-icon-menu span:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Dark Mode */
 /* Using :global or assuming parent class if needed, but for now simple */
 .dark-mode .contact-sidebar {

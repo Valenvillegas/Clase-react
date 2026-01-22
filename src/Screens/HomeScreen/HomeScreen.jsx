@@ -11,13 +11,7 @@ export default function HomeScreen(props) {
         <div className="home-screen">
             <div className="home-screen-content">
                 <div className="sidebar-container">
-                    <div className='home-screen-icon-menu'>
-                        <h1>WhatsApp</h1>
-                        <div>
-                            
-                            <span><i class="bi bi-three-dots-vertical"></i></span>
-                        </div>
-                    </div>
+
                     <ContactSidebar />
                 </div>
                 <div className="placeholder-chat">

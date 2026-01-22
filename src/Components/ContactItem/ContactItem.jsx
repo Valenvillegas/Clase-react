@@ -7,7 +7,7 @@ export default function ContactItem(props) {
     const { isDarkmode } = useContext(ThemeContext)
     const contact = props.contact
     return (
-        <Link to={`/contact/${contact.contact_id}`} className={isDarkmode ? 'dark-mode' : ''}>
+        <Link to={`/contact/${contact.contact_id}`} className={`contact-item-link ${isDarkmode ? 'dark-mode' : ''}`}>
             <style>
 
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"></link>
