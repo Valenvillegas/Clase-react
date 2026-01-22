@@ -5,6 +5,7 @@
     align-items: flex-end;
     /* Align bottom to handle multiline growth logic if added */
     min-height: 62px;
+    width: 100%;
     box-sizing: border-box;
     position: relative;
     z-index: 2;

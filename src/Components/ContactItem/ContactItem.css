@@ -70,7 +70,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    
 }
+
 
 /* Dark Mode */
 .dark-mode .contact-item-container {

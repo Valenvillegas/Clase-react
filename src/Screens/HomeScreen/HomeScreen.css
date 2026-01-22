@@ -15,7 +15,6 @@
 }
 
 .home-screen h1 {
-  background-color: #008069;
   color: white;
   padding: 20px;
   margin: 0;
@@ -35,6 +34,23 @@
   max-width: 100%;
 }
 
+.home-screen-icon-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    background-color: #008069;
+    cursor: default;
+}
+
+.home-screen-icon-menu span{
+    color: white;
+    cursor: pointer;
+}
+
 @media (min-width: 900px) {
     .home-screen {
         flex-direction: row;
@@ -49,7 +65,6 @@
         left: 0;
         width: 100%;
         height: 127px;
-        background-color: #00a884;
         z-index: 0;
     }
 
@@ -58,7 +73,7 @@
         display: flex;
         width: 100%;
         height: 100%;
-        margin: 0 auto;
+        margin: 0 ;
         box-shadow: 0 17px 50px 0 rgba(11,20,26,.19), 0 12px 15px 0 rgba(11,20,26,.24);
         background-color: #fff;
     }

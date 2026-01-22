@@ -11,14 +11,14 @@ const contacts_data = [
             {
                 message_id: 1,
                 message_content: 'Hola que tal',
-                message_status: 'NOT_RECEIVED', /* 'SEEN' | 'UNSEEN' */
+                message_status: 'Seen', /* 'SEEN' | 'UNSEEN' */
                 message_created_at: new Date(),
                 send_by_me: false
             },
             {
                 message_id: 2,
                 message_content: 'Todo bien',
-                message_status: 'NOT_RECEIVED', /* 'SEEN' | 'UNSEEN' */
+                message_status: 'SEEN', /* 'SEEN' | 'UNSEEN' */
                 message_created_at: new Date(),
                 send_by_me: true
             },
@@ -77,7 +77,7 @@ const contacts_data = [
         contact_avatar: 'https://static.wikia.nocookie.net/starwars/images/7/7c/C-3PO.jpg/revision/latest?cb=20090507210712',
         last_message_created_at: new Intl.DateTimeFormat('es-ES', { hour: '2-digit', minute: '2-digit' }).format(new Date('2022-07-01T14:00:00.000Z')),
         last_message_content: 'Dale dale',
-        last_message_status: 'SEEN',/* 'SEEN' | 'UNSEEN' */
+        last_message_status: 'RECEIVED',/* 'SEEN' | 'UNSEEN' */
         last_time_online: '12:00 Pm',
         messages: [
             {
@@ -97,7 +97,7 @@ const contacts_data = [
             {
                 message_id: 3,
                 message_content: 'Dale dale',
-                message_status: 'SEEN', /* 'SEEN' | 'UNSEEN' */
+                message_status: 'RECEIVED', /* 'SEEN' | 'UNSEEN' */
                 message_created_at: new Date('2022-07-01T13:45:00.000Z'),
                 send_by_me: false
             }
