@@ -19,6 +19,50 @@
     max-width: 100%;
 }
 
+.home-screen-content-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 5%;
+    height: 100%;
+    padding: 0;
+    background-color: #f0f2f5;
+    box-sizing: border-box;
+    cursor: default;
+    border-right: 1px solid #d1d7db
+}
+
+
+.home-screen-content-menu-icons-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    gap: 24px;
+    box-sizing: border-box;
+    cursor: default;
+    flex: 1;
+}
+
+.home-screen-content-menu-icon-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    gap: 24px;
+    box-sizing: border-box;
+    cursor: default;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
 .chat-screen {
     display: flex;
     flex-direction: column;
@@ -93,19 +137,12 @@
 @media (min-width: 900px) {
     .home-screen {
         flex-direction: row;
-        background-color: #d1d7db;
+        background-color: #f0f2f5;
         position: relative;
     }
 
     .home-screen::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 127px;
-        background-color: #00a884;
-        z-index: 0;
+        display: none;
     }
 
     .home-screen-content {
@@ -113,9 +150,11 @@
         display: flex;
         width: 100%;
         height: 100%;
-        margin: 0 auto;
-        box-shadow: 0 17px 50px 0 rgba(11, 20, 26, .19), 0 12px 15px 0 rgba(11, 20, 26, .24);
+        max-width: none;
+        margin: 0;
+        box-shadow: none;
         background-color: #fff;
+        overflow: hidden;
     }
 
     .home-screen .sidebar-container {
@@ -127,8 +166,8 @@
     .chat-screen {
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        width: 70%;
+        height: 100%;
+        flex: 1;
         background-color: #f0f2f5;
         font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
         color: #111b21;
