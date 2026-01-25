@@ -46,9 +46,20 @@ export default function ContactMesaggeScreen() {
                 <div className="chat-screen">
                     <div className="chat-header">
                         <img src={contactSelected.contact_avatar || 'https://via.placeholder.com/40'} alt="avatar" />
-                        <div className="chat-info">
-                            <h3>{contactSelected.contact_name}</h3>
-                            <span>en línea hoy a las {contactSelected.last_time_online}</span>
+                        <div className="chat-content-span-options">
+                            <div className="chat-info">
+                                <h3>{contactSelected.contact_name}</h3>
+                                <span>en línea hoy a las {contactSelected.last_time_online}</span>
+                            </div>
+                            <div className="chat-options">
+                                <div className="div-span-content-call" title="Llamar">
+                                    <span><i class="bi bi-camera-video font-size-i"></i></span>
+                                    <span><i class="bi bi-caret-down-fill"></i></span>
+                                </div>
+                                <span className="span-content"><i class="bi bi-search font-size-i" title="Buscar"></i></span>
+                                <span className="span-content"><i className="bi bi-three-dots-vertical font-size-i" title="Opciones"></i></span>
+                            </div>
+ 
                         </div>
                     </div>
 
