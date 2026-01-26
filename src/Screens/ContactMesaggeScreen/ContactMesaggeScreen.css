@@ -115,16 +115,9 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
 }
 
-.chat-footer {
-    min-height: 62px;
-    background-color: #f0f2f5;
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    box-sizing: border-box;
-}
 
 /* Style overrides for common elements if they are just divs */
 .chat-body::-webkit-scrollbar {
@@ -210,7 +203,7 @@
 
 .bi-caret-down-fill{
     font-size: 10px;
-}
+}   
 
 
 @media (min-width: 900px) {

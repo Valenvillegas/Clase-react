@@ -7,6 +7,7 @@ const contacts_data = [
         last_message_content: 'Que tal',
         last_message_status: 'NOT_RECEIVED', /* 'SEEN' | 'UNSEEN' */
         last_time_online: '10:00 Am',
+        last_message_send_by_me: false,
         messages: [
             {
                 message_id: 1,
@@ -39,6 +40,7 @@ const contacts_data = [
         last_message_content: 'Sabias palabras maestro',
         last_message_status: 'SEEN',/* 'SEEN' | 'UNSEEN' */
         last_time_online: '5:00 Pm',
+        last_message_send_by_me: true,
         messages: [
             {
                 message_id: 1,
@@ -79,6 +81,7 @@ const contacts_data = [
         last_message_content: 'Dale dale',
         last_message_status: 'RECEIVED',/* 'SEEN' | 'UNSEEN' */
         last_time_online: '12:00 Pm',
+        last_message_send_by_me: false,
         messages: [
             {
                 message_id: 1,

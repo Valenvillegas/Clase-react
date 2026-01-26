@@ -56,6 +56,14 @@
     /* Adjust alignment */
 }
 
+.message-time i{
+    margin-right: 4px;
+    font-size: 16px;
+    /* Icon size */
+    display: flex;
+    align-items: center;
+}
+
 /* Dark Mode */
 .dark-mode .bubble-mine {
     background-color: #005c4b;

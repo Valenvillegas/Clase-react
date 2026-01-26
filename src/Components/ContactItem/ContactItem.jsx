@@ -21,7 +21,12 @@ export default function ContactItem(props) {
                     </div>
                     <div className="contact-item-subheader">
                         <span className="contact-item-status">
-                            {contact.last_message_status === 'NOT_RECEIVED' ? <i class="bi bi-check2"></i> : contact.last_message_status === 'RECEIVED' ? <i class="bi bi-check2-all"></i> : contact.last_message_status === 'SEEN' ? <i class="bi bi-check2-all" style={{ color: '#007bff' }}></i> : 'No visto'}
+                            
+                            {
+                                contact.last_message_send_by_me === true ? contact.last_message_status === 'NOT_RECEIVED' ? <i class="bi bi-check2"></i>  : contact.last_message_status === 'SEEN' ? <i class="bi bi-check2-all" style={{ color: '#007bff' }}></i> :  <i class="bi bi-check2-all"></i>
+                                : ''
+                            
+                            }
                         </span>
                         <p className="contact-item-message">{contact.last_message_content}</p>
                     </div>

@@ -57,7 +57,7 @@ export default function ContactMesaggeScreen() {
                                     <span><i class="bi bi-caret-down-fill"></i></span>
                                 </div>
                                 <span className="span-content"><i class="bi bi-search font-size-i" title="Buscar"></i></span>
-                                <span className="span-content"><i className="bi bi-three-dots-vertical font-size-i" title="Opciones"></i></span>
+                                <span className="span-content"><i className="bi bi-three-dots-vertical font-size-i" title="Menú"></i></span>
                             </div>
  
                         </div>
@@ -65,9 +65,6 @@ export default function ContactMesaggeScreen() {
 
                     <div className="chat-body">
                         <MessagesList />
-                    </div>
-
-                    <div className="chat-footer">
                         <NewMessageForm />
                     </div>
                 </div>
