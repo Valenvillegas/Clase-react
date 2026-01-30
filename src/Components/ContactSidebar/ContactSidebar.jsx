@@ -9,7 +9,7 @@ export default function ContactSidebar() {
     return (
         <div className='contact-sidebar'>
             <div className='home-screen-icon-menu'>
-                <h1>WhatsApp</h1>
+                <h1 className='home-screen-icon-menu-title'>WhatsApp</h1>
                 <div className='home-screen-icon-menu-icons'>
                     <span><i className="bi bi-chat-left-text" title="Nuevo chat"></i></span>
                     <span><i className="bi bi-three-dots-vertical" title="Menu"></i></span>
