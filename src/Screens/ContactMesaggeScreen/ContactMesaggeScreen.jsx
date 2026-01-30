@@ -1,6 +1,6 @@
 import React, { use, useContext, useEffect } from 'react'
 import './ContactMesaggeScreen.css'
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import MessagesList from '../../Components/MessagesList/MessagesList';
 import { getContactById } from '../../services/contactService';
 import { ContactDetailContext } from '../../Contexts/ContactDetailContext';
@@ -15,6 +15,7 @@ import ContactSidebar from '../../Components/ContactSidebar/ContactSidebar';
         last_message_status: 'NOT_RECEIVED' */
 export default function ContactMesaggeScreen() {
     const objetos_paramatros_url = useParams();
+    const navigate = useNavigate();
     console.log(objetos_paramatros_url)
     const contact_id = objetos_paramatros_url.contact_id
     const { contactSelected } = useContext(
@@ -24,7 +25,7 @@ export default function ContactMesaggeScreen() {
 
     if (!contactSelected) return <div>El contacto no existe</div>
     return (
-        <div className="home-screen">
+        <div className="contact-message-screen-wrapper">
             <div className="home-screen-content">
                 <aside className='home-screen-content-menu'>
                     <div className='home-screen-content-menu-icons-social'>
@@ -45,11 +46,14 @@ export default function ContactMesaggeScreen() {
                 </div>
                 <div className="chat-screen">
                     <div className="chat-header">
+                        <button className="button-back" onClick={() => navigate('/')}>
+                            <i className="bi bi-arrow-left" style={{ fontSize: '24px' }}></i>
+                        </button>
                         <img src={contactSelected.contact_avatar || 'https://via.placeholder.com/40'} alt="avatar" />
                         <div className="chat-content-span-options">
                             <div className="chat-info">
                                 <h3>{contactSelected.contact_name}</h3>
-                                <span>en línea hoy a las {contactSelected.last_time_online}</span>
+                                <span>últ. vez hoy a la(s) {contactSelected.last_time_online}</span>
                             </div>
                             <div className="chat-options">
                                 <div className="div-span-content-call" title="Llamar">
@@ -59,7 +63,7 @@ export default function ContactMesaggeScreen() {
                                 <span className="span-content"><i class="bi bi-search font-size-i" title="Buscar"></i></span>
                                 <span className="span-content"><i className="bi bi-three-dots-vertical font-size-i" title="Menú"></i></span>
                             </div>
- 
+
                         </div>
                     </div>
 

@@ -39,6 +39,7 @@
     line-height: normal;
     color: #111b21;
     padding: 0;
+    margin-left: -10px;
     /* Remove default padding */
     width: 100%;
 }
@@ -61,6 +62,8 @@
 .search-icon-btn svg,
 .filter-icon-btn svg {
     margin-top: 2px;
+    width: 18px;
+    height: 18px;
     /* Slight alignment adjustment */
 }
 

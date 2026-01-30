@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-.home-screen {
+.contact-message-screen-wrapper {
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: #f0f2f5;
     font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     color: #111b21;
+    overflow: hidden;
 }
 
+.home-screen-content {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
 
-
-.home-screen .sidebar-container {
+.contact-message-screen-wrapper .sidebar-container {
+    display: none;
+    /* Hidden on mobile in chat view */
     flex: 1;
     background-color: #ffffff;
     overflow-y: auto;
@@ -20,11 +31,12 @@
 }
 
 .home-screen-content-menu {
-    display: flex;
+    display: none;
+    /* Hidden on mobile */
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    width: 5%;
+    width: 64px;
     height: 100%;
     padding: 0;
     background-color: #f0f2f5;
@@ -32,7 +44,6 @@
     cursor: default;
     border-right: 1px solid #d1d7db
 }
-
 
 .home-screen-content-menu-icons-social {
     display: flex;
@@ -66,11 +77,14 @@
 .chat-screen {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    /* Full width on mobile */
     background-color: #efeae2;
     font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+/* ... keep header/body styles ... */
 .chat-header {
     height: 60px;
     background-color: #f0f2f5;
@@ -79,6 +93,20 @@
     padding: 10px 16px;
     box-sizing: border-box;
     z-index: 100;
+}
+
+/* Back button style - initially visible on mobile */
+.button-back {
+    
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: -8px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #54656f;
 }
 
 .chat-header img {
@@ -94,7 +122,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 8px;
+    padding-top: 20px;
+    flex: 1;
+}
+.chat-info span {
+    display: flex;
+    align-items: flex-start;
+    font-size: 10px;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: 2px;
+    
+    margin-bottom: 12px;
+    flex: 1;
 }
 
 .chat-header h3 {
@@ -102,6 +142,8 @@
     font-size: 16px;
     color: #111b21;
     font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: -5px;
 }
 
 .chat-header span {
@@ -128,7 +170,7 @@
     background-color: rgba(11, 20, 26, 0.2);
 }
 
-.chat-content-span-options{
+.chat-content-span-options {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -143,19 +185,21 @@
     margin-bottom: 10px;
 }
 
-.chat-options{
+.chat-options {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: auto;
-    gap: 24px;
+    gap: 15px;
     box-sizing: border-box;
     cursor: default;
     border-bottom: none;
     padding-top: 8px;
+    margin-right: -10px;
 }
-.div-span-content-call{
+
+.div-span-content-call {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -166,7 +210,8 @@
     border-bottom: none;
     gap: 4px;
 }
-.chat-options span{
+
+.chat-options span {
     color: #0a0a0a;
     cursor: pointer;
     border-radius: 50%;
@@ -176,7 +221,7 @@
     transition: background-color 0.2s;
 }
 
-.span-content{
+.span-content {
     color: #0a0a0a;
     cursor: pointer;
     border-radius: 50%;
@@ -186,7 +231,7 @@
     transition: background-color 0.2s;
 }
 
-.div-span-content-call:hover{
+.div-span-content-call:hover {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 100px;
     padding: 8px;
@@ -197,23 +242,23 @@
     padding: 8px;
 }
 
-.font-size-i{
+.font-size-i {
     font-size: 20px;
 }
 
-.bi-caret-down-fill{
+.bi-caret-down-fill {
     font-size: 10px;
-}   
+}
 
 
 @media (min-width: 900px) {
-    .home-screen {
+    .contact-message-screen-wrapper {
         flex-direction: row;
         background-color: #f0f2f5;
         position: relative;
     }
 
-    .home-screen::after {
+    .contact-message-screen-wrapper::after {
         display: none;
     }
 
@@ -229,10 +274,14 @@
         overflow: hidden;
     }
 
-    .home-screen .sidebar-container {
-        width: 30%;
-        max-width: 450px;
-        min-width: 300px;
+    .home-screen-content-menu {
+        display: flex;
+    }
+
+    .contact-message-screen-wrapper .sidebar-container {
+        display: block;
+        width: 400px;
+        flex: none;
     }
 
     .chat-screen {
@@ -245,24 +294,9 @@
         color: #111b21;
     }
 
-    .placeholder-chat {
-        flex: 1;
-        background-color: #f0f2f5;
-        border-bottom: 6px solid #43c960;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #41525d;
+    /* Hide back button on desktop */
+    .button-back {
+        display: none;
     }
-
-    .placeholder-chat h1 {
-        background: none;
-        color: #41525d;
-        font-size: 32px;
-        font-weight: 300;
-        padding: 0;
-        margin-bottom: 10px;
-    }
+    
 }
