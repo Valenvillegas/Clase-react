@@ -30,64 +30,7 @@
     max-width: 100%;
 }
 
-.home-screen-content-menu {
-    display: none;
-    /* Hidden on mobile */
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 64px;
-    height: 100%;
-    padding: 0;
-    background-color: #f0f2f5;
-    box-sizing: border-box;
-    cursor: default;
-    border-right: 1px solid #d1d7db
-}
 
-.home-screen-content-menu-icons-social {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    height: auto;
-    padding: 20px 0;
-    gap: 24px;
-    box-sizing: border-box;
-    cursor: default;
-    flex: 1;
-}
-
-.home-screen-content-menu-icon-settings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    height: auto;
-    padding: 20px 0;
-    gap: 24px;
-    box-sizing: border-box;
-    cursor: default;
-    border-bottom: none;
-    margin-bottom: 10px;
-}
-
-.home-screen-content-menu span {
-    color: #636261;
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s;
-}
-
-.home-screen-content-menu span:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 8px;
-}
 
 .chat-screen {
     display: flex;
@@ -338,9 +281,7 @@
         overflow: hidden;
     }
 
-    .home-screen-content-menu {
-        display: flex;
-    }
+
 
     .contact-message-screen-wrapper .sidebar-container {
         display: block;

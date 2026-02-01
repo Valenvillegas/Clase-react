@@ -1,0 +1,103 @@
+.home-screen-content-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    cursor: default;
+    border-right: none;
+    border-top: 1px solid #d1d7db;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.home-screen-content-menu-icons-social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    gap: 0;
+    box-sizing: border-box;
+    cursor: default;
+    flex: 1;
+}
+
+.home-screen-content-menu-icon-settings {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    gap: 24px;
+    box-sizing: border-box;
+    cursor: default;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.home-screen-content-menu span {
+    color: #636261;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.home-screen-content-menu span:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 8px;
+}
+
+/* Override for ContactMessageScreen on Mobile: Hide it */
+.contact-message-screen-wrapper .home-screen-content-menu {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .home-screen-content-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 64px;
+        height: 100%;
+        padding: 0;
+        background-color: #f0f2f5;
+        border-right: 1px solid #d1d7db;
+        border-top: none;
+        position: static;
+        box-shadow: none;
+        z-index: auto;
+    }
+
+    .home-screen-content-menu-icons-social {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        padding: 20px 0;
+        gap: 24px;
+    }
+
+    .home-screen-content-menu-icon-settings {
+        display: flex;
+    }
+
+    /* Restore for ContactMessageScreen on Desktop */
+    .contact-message-screen-wrapper .home-screen-content-menu {
+        display: flex;
+    }
+}
