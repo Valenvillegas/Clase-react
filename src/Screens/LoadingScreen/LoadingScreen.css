@@ -1,0 +1,133 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--theme-background, #111b21);
+    color: var(--theme-text, #e9edef);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.loading-logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    padding-top: 50px; /* offset for visual center */
+}
+
+.whatsapp-anim-logo {
+    width: 80px;
+    height: 80px;
+    fill: #25D366; /* WhatsApp iconic green */
+    opacity: 0.85;
+}
+
+/* Optional progression bar below logo as seen in whatsapp web */
+.progress-bar-container {
+    width: 380px;
+    height: 3px;
+    background-color: #2a3942;
+    margin-top: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+@media (max-width: 500px) {
+    .progress-bar-container {
+        width: 250px;
+    }
+}
+
+.progress-bar {
+    width: 30%;
+    height: 100%;
+    background-color: #00a884;
+    border-radius: 4px;
+    animation: loadProgress 2s ease-in-out infinite;
+}
+
+@keyframes loadProgress {
+    0% {
+        width: 0%;
+        transform: translateX(-100%);
+    }
+    100% {
+        width: 50%;
+        transform: translateX(350%);
+    }
+}
+
+.loading-bottom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    gap: 20px;
+}
+
+.from-text-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #8696a0;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.icon-lock {
+    display: flex;
+    align-items: center;
+    color: #8696a0;
+}
+
+.meta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.from-text-small {
+    color: #8696a0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.meta-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #111b21;
+}
+
+/* Support dark/light mode for Meta logo dynamically */
+@media (prefers-color-scheme: dark) {
+    .meta-logo-wrapper {
+        color: #e9edef;
+    }
+}
+
+.meta-logo-wrapper {
+    color: var(--theme-text, #e9edef); /* Ensure the text adapts to theme */
+}
+
+.meta-icon {
+    width: 26px;
+    height: 20px;
+    fill: #25D366;
+}
+
+.meta-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #25D366; /* Meta often uses gradients, but whatsapp green makes it look seamless */
+}

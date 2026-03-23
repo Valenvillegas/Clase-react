@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import ContactSidebar from './Components/ContactSidebar/ContactSidebar'
+import LoadingScreen from './Screens/LoadingScreen/LoadingScreen'
 import { Route, Routes } from 'react-router'
 import HomeScreen from './Screens/HomeScreen/HomeScreen'
 import ContactScreen from './Screens/ContactScreen/ContactScreen'
@@ -9,6 +10,19 @@ import ContactContextsProvider from './Contexts/ContactContexts'
 import ContactDetailContextProvider from './Contexts/ContactDetailContext'
 import ContactMesaggeScreen from './Screens/ContactMesaggeScreen/ContactMesaggeScreen'
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <div>
       {/* contactContext config */}

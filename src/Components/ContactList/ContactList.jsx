@@ -14,10 +14,10 @@ export default function ContactList() {
        Tener en cuenta si la lista esta vacias
    */
     if (loadingContacts) {
-        return <p>Cargando...</p>
+        return <div style={{ padding: '20px', textAlign: 'center', color: 'var(--text-secondary)' }}>Cargando contactos...</div>
     }
     if (!contacts || contacts.length === 0) {
-        return <div>No hay contactos</div>
+        return <div style={{ padding: '20px', textAlign: 'center', color: 'var(--text-secondary)' }}>No hay contactos</div>
     }
     return (
         <div className='contact-list-container'>

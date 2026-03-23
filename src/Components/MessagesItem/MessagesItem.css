@@ -16,25 +16,25 @@
 .message-bubble {
     position: relative;
     max-width: 65%;
-    padding: 6px 7px 8px 9px;
+    padding: 6px 7px 5px 9px;
     margin-top: 15px;
     border-radius: 7.5px;
     box-shadow: 0 1px 0.5px rgba(11, 20, 26, .13);
     font-size: 14.2px;
     line-height: 19px;
-    color: #111b21;
+    color: var(--text-primary);
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
 }
 
 .bubble-mine {
-    background-color: #d9fdd3;
+    background-color: var(--bg-bubble-mine);
     border-top-right-radius: 0;
 }
 
 .bubble-theirs {
-    background-color: #ffffff;
+    background-color: var(--bg-bubble-theirs);
     border-top-left-radius: 0;
 }
 
@@ -50,11 +50,11 @@
 
 .message-time {
     font-size: 11px;
-    color: #667781;
-    height: 15px;
-    line-height: 15px;
+    color: var(--text-secondary);
+    line-height: normal;
     margin-left: auto;
-    margin-bottom: -3px;
+    margin-bottom: 0;
+    align-self: flex-end;
     display: flex;
     align-items: center;
     gap: 3px;
@@ -64,21 +64,4 @@
     font-size: 16px;
     display: flex;
     align-items: center;
-}
-
-/* Dark Mode */
-.dark-mode .bubble-mine {
-    background-color: #005c4b;
-}
-
-.dark-mode .bubble-theirs {
-    background-color: #202c33;
-}
-
-.dark-mode .message-text {
-    color: #e9edef;
-}
-
-.dark-mode .message-time {
-    color: #8696a0;
 }

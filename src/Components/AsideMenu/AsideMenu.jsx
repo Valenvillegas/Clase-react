@@ -5,7 +5,7 @@ export default function AsideMenu() {
     return (
         <aside className='home-screen-content-menu'>
             <div className='home-screen-content-menu-icons-social'>
-                <span className='span-content-icon-chat'><i class="bi bi-chat-left-text-fill"></i></span>
+                <span className='span-content-icon-chat'><i className="bi bi-chat-left-text-fill"></i></span>
                 <span className='span-content-icon-status'><i className="bi bi-plus-circle"></i></span>
                 <span className='span-content-icon-diffusion'><i className="bi bi-chat-dots"></i></span>
                 <span className='span-content-icon-comunity'><i className="bi bi-people"></i></span>

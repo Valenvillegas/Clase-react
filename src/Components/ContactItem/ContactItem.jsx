@@ -7,11 +7,7 @@ export default function ContactItem(props) {
     const { isDarkmode } = useContext(ThemeContext)
     const contact = props.contact
     return (
-        <Link to={`/contact/${contact.contact_id}`} className={`contact-item-link ${isDarkmode ? 'dark-mode' : ''}`}>
-            <style>
-
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"></link>
-            </style>
+        <Link to={`/contact/${contact.contact_id}`} className="contact-item-link">
             <div className="contact-item-container">
                 <img src={contact.contact_avatar} alt={contact.contact_name} className="contact-item-avatar" />
                 <div className="contact-item-details">
@@ -23,7 +19,7 @@ export default function ContactItem(props) {
                         <span className="contact-item-status">
                             
                             {
-                                contact.last_message_send_by_me === true ? contact.last_message_status === 'NOT_RECEIVED' ? <i class="bi bi-check2"></i>  : contact.last_message_status === 'SEEN' ? <i class="bi bi-check2-all" style={{ color: '#007bff' }}></i> :  <i class="bi bi-check2-all"></i>
+                                contact.last_message_send_by_me === true ? contact.last_message_status === 'NOT_RECEIVED' ? <i className="bi bi-check2"></i>  : contact.last_message_status === 'SEEN' ? <i className="bi bi-check2-all" style={{ color: '#007bff' }}></i> :  <i className="bi bi-check2-all"></i>
                                 : ''
                             
                             }

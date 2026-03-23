@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect } from 'react'
+import React, { use, useContext, useEffect, useState } from 'react'
 import './ContactMesaggeScreen.css'
 import { useParams, useNavigate } from 'react-router';
 import MessagesList from '../../Components/MessagesList/MessagesList';
@@ -8,6 +8,7 @@ import { ContactContexts } from '../../Contexts/ContactContexts';
 import NewMessageForm from '../../Components/NewMessagesForm/NewMessageForm';
 import ContactSidebar from '../../Components/ContactSidebar/ContactSidebar';
 import AsideMenu from '../../Components/AsideMenu/AsideMenu';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 /* contact_id: 1,
         contact_name: 'Laura',
         contact_avatar: 'https://www.seoptimer.com/storage/images/2014/08/no-con-la-mascota.jpg',
@@ -22,9 +23,26 @@ export default function ContactMesaggeScreen() {
     const { contactSelected } = useContext(
         ContactDetailContext
     )
-    const { updateContactById } = useContext(ContactContexts)
+    const { updateContactById, loadingContacts } = useContext(ContactContexts)
 
-    if (!contactSelected) return <div>El contacto no existe</div>
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 900);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
+    if (loadingContacts) {
+        return <LoadingScreen />;
+    }
+
+    if (!contactSelected) return (
+        <div className="contact-message-screen-wrapper" style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <h2 style={{ color: 'var(--text-secondary)' }}>El contacto no existe o no se pudo cargar.</h2>
+        </div>
+    );
     return (
         <div className="contact-message-screen-wrapper">
             <div className="home-screen-content">
@@ -35,9 +53,11 @@ export default function ContactMesaggeScreen() {
                 </div>
                 <div className="chat-screen">
                     <div className="chat-header">
-                        <button className="button-back" onClick={() => navigate('/')}>
-                            <i className="bi bi-arrow-left" style={{ fontSize: '24px' }}></i>
-                        </button>
+                        {isMobile && (
+                            <button className="button-back" onClick={() => navigate('/')}>
+                                <i className="bi bi-arrow-left" style={{ fontSize: '24px' }}></i>
+                            </button>
+                        )}
                         <img src={contactSelected.contact_avatar || 'https://via.placeholder.com/40'} alt="avatar" />
                         <div className="chat-content-span-options">
                             <div className="chat-info">
@@ -47,10 +67,10 @@ export default function ContactMesaggeScreen() {
                             <div className="chat-options">
                                 <div className="div-span-content-call" title="Llamar">
                                     <span><i className="bi bi-camera-video font-size-i"></i></span>
-                                    <span className="icon-caret"><i className="bi bi-caret-down-fill"></i></span>
+                                    {!isMobile && <span className="icon-caret"><i className="bi bi-caret-down-fill"></i></span>}
                                 </div>
-                                <span className="span-content" title="Llamada"><i className="bi bi-telephone font-size-i"></i></span>
-                                <span className="span-content" title="Buscar"><i className="bi bi-search font-size-i"></i></span>
+                                {isMobile && <span className="span-content" title="Llamada"><i className="bi bi-telephone font-size-i"></i></span>}
+                                {!isMobile && <span className="span-content" title="Buscar"><i className="bi bi-search font-size-i"></i></span>}
                                 <span className="span-content"><i className="bi bi-three-dots-vertical font-size-i" title="Menú"></i></span>
                             </div>
 
